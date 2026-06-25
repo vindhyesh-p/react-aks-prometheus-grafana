@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: heartfelt-app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: heartfelt
+
+  template:
+
+    metadata:
+      labels:
+        app: heartfelt
+
+    spec:
+
+      containers:
+
+      - name: heartfelt
+
+        image: heartfeltacr12345.azurecr.io/heart-felt:v3
+
+        ports:
+        - containerPort: 80

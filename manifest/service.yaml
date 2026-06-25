@@ -1,0 +1,17 @@
+apiVersion: v1
+
+kind: Service
+
+metadata:
+  name: heartfelt-service
+
+spec:
+
+  type: LoadBalancer
+
+  selector:
+    app: heartfelt
+
+  ports:
+  - port: 80
+    targetPort: 80
